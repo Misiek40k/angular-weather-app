@@ -8,7 +8,7 @@ import { faCloud as icon } from '@fortawesome/free-solid-svg-icons';
 })
 export class HeaderComponent implements OnInit {
   headerIco = icon;
-  headerTxt = 'Angular Weather App'
+  headerTxt = 'angular Weather App'
 
   ngOnInit() {
   }
