@@ -22,3 +22,11 @@ $fw-bold: 700;
 $br-mobile: 360px;
 $br-tablet: 768px;
 $br-desktop: 1200px;
+
+//container
+
+%container {
+  max-width: $base-unit * 60;
+  margin: 0 auto;
+  padding: 0 $base-unit;
+}
