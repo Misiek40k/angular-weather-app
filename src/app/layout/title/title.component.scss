@@ -1,0 +1,28 @@
+@import "../../../styles/settings.scss";
+
+.container{
+  @extend%container;
+
+  .title {
+    position: relative;
+    font-size: $base-unit * 1.8;
+    margin: $base-unit * 1.2 0;
+
+    @include p-el("after") {
+      content: "";
+      width: $base-unit * 2.4;
+      height: $base-unit * 0.2;
+      bottom: $base-unit * -0.6;
+      left: 0;
+      background: $color-primary;
+    }
+  }
+
+  .subtitle {
+    position: relative;
+    font-size: $base-unit * 0.9;
+    margin: $base-unit * 1.2 0 $base-unit * 2.4;
+  }
+}
+
+
