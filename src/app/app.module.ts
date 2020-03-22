@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FontAwesomeModule, FaIconLibrary  } from '@fortawesome/angular-fontawesome';
+import { faCloud } from '@fortawesome/free-solid-svg-icons';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { TitleComponent } from './layout/title/title.component';
@@ -19,4 +20,8 @@ import { TitleComponent } from './layout/title/title.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(library: FaIconLibrary) {
+    library.addIcons(faCloud);
+  }
+}

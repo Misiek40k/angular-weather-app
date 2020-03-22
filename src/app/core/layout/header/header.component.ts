@@ -8,7 +8,7 @@ import { config } from '../../shared/config';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  headerIco = config.header.ico;
+  headerIco = icon;
   headerTxt = config.header.txt
 
   ngOnInit() {

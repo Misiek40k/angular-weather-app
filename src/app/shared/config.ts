@@ -1,5 +1,6 @@
 export const config = Object({
   header: {
+    ico: 'cloud',
     txt: 'angular weather app',
   },
   title: {
