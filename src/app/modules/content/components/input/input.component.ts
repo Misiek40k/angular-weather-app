@@ -8,7 +8,6 @@ import { ContentService } from '../../services/content.service';
   styleUrls: ['./input.component.scss']
 })
 export class InputComponent {
-  cities;
   placeholder: string = config.input.placeholder;
   value = '';
 
@@ -19,8 +18,6 @@ export class InputComponent {
   change(value: string) {
     this.value = value;
 
-    this.contentService.getCity(this.value).subscribe(input => {
-      this.cities = input
-    });
+    this.contentService.getCity(this.value);
   }
 }

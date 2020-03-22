@@ -30,3 +30,13 @@ $br-desktop: 1200px;
   margin: 0 auto;
   padding: 0 $base-unit;
 }
+
+%inputs {
+  width: 100%;
+  background: $color-light;
+  border: $base-unit * 0.05 solid lighten($color-dark, 60%);
+  padding: $base-unit * 0.6 $base-unit * 0.9;
+  margin: 0 0 $base-unit * 0.6 0;
+  font-family: $font-text;
+  border-radius: $radius;
+}
