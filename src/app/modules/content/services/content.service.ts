@@ -1,16 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from 'environments/environment';
+import { config } from 'app/shared/config'
 
 @Injectable()
 export class ContentService {
 
-  constructor(private http: HttpClient) {
-
-  }
+  constructor(private http: HttpClient) { }
 
   getCity(city): Observable<any> {
-    return this.http.get(`https://www.metaweather.com/api/location/search/?query=${city}`)
+    return this.http.get(`${config.corsBypass}${config.api.search}${city}`)
   }
 }

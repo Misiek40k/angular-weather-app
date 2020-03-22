@@ -1,4 +1,8 @@
 export const config = Object({
+  corsBypass: 'https://cors-anywhere.herokuapp.com/',
+  api:{
+    search: 'https://www.metaweather.com/api/location/search/?query='
+  },
   header: {
     ico: 'cloud',
     txt: 'angular weather app',
