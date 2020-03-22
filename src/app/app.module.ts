@@ -6,16 +6,18 @@ import { faCloud } from '@fortawesome/free-solid-svg-icons';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { TitleComponent } from './layout/title/title.component';
+import { ContentModule } from './modules/content/content.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    TitleComponent
+    TitleComponent,
   ],
   imports: [
     BrowserModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ContentModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
