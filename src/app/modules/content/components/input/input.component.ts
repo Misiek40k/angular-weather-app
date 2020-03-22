@@ -19,11 +19,8 @@ export class InputComponent {
   change(value: string) {
     this.value = value;
 
-
-    this.contentService.getCity(this.value).subscribe(input=>{
+    this.contentService.getCity(this.value).subscribe(input => {
       this.cities = input
     });
-
-    console.log(this.cities);
   }
 }
