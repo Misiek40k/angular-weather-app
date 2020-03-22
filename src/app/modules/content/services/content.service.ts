@@ -9,19 +9,26 @@ export class ContentService {
 
   constructor(private http: HttpClient) { }
 
-  private subject = new Subject<any>();
+  private citySubject = new Subject<any>();
+  private weatherSubject = new Subject<any>();
 
   getCity(city): Observable<any> {
     return this.http.get(`${config.corsBypass}${config.api.search}${city}`).pipe(
-      map(res => this.subject.next(res))
-    )
+      map(res => this.citySubject.next(res))
+    );
   }
 
   showCity(): Observable<any> {
-    return this.subject.asObservable();
+    return this.citySubject.asObservable();
   }
 
   getWeather(cityId): Observable<any> {
-    return this.http.get(`${config.corsBypass}${config.api.searchId}${cityId}`);
+    return this.http.get(`${config.corsBypass}${config.api.searchId}${cityId}`).pipe(
+      map(res => this.weatherSubject.next(res))
+    );
+  }
+
+  showWeather(): Observable<any> {
+    return this.weatherSubject.asObservable();
   }
 }
