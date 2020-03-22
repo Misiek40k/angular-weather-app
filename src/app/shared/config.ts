@@ -6,5 +6,8 @@ export const config = Object({
   title: {
     title: 'Choose your city',
     subtitle: 'and check the current weather',
+  },
+  input: {
+    placeholder: 'City name...',
   }
 })

@@ -7,6 +7,6 @@ import { config } from '../../shared/config';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  headerIco = config.header.ico;
-  headerTxt = config.header.txt
+  headerIco: string = config.header.ico;
+  headerTxt: string = config.header.txt
 }

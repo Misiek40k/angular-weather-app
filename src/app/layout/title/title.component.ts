@@ -7,6 +7,6 @@ import { config } from '../../shared/config';
   styleUrls: ['./title.component.scss']
 })
 export class TitleComponent {
-  title = config.title.title;
-  subtitle = config.title.subtitle;
+  title: string = config.title.title;
+  subtitle: string = config.title.subtitle;
 }
