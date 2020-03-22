@@ -20,4 +20,8 @@ export class ContentService {
   showCity(): Observable<any> {
     return this.subject.asObservable();
   }
+
+  getWeather(cityId): Observable<any> {
+    return this.http.get(`${config.corsBypass}${config.api.searchId}${cityId}`);
+  }
 }

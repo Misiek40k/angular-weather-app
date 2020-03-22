@@ -8,8 +8,9 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./select.component.scss']
 })
 export class SelectComponent {
-  options: Array<Object>;
+  options: Array<Object> = [];
   subscription: Subscription;
+  data;
 
   constructor(
     private contentService: ContentService,
@@ -17,5 +18,12 @@ export class SelectComponent {
     this.subscription = this.contentService.showCity().subscribe(options => {
       if (options) { this.options = options };
     });
+  }
+
+  onChange(id){
+    this.contentService.getWeather(id).subscribe(city=>{
+      this.data = city
+      console.log(city);
+    })
   }
 }
