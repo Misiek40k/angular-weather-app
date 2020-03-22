@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ContentService } from '../../services/content.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-select',
@@ -6,14 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./select.component.scss']
 })
 export class SelectComponent {
-  options = [
-    { id: 1, name: "United States" },
-    { id: 2, name: "Australia" },
-    { id: 3, name: "Canada" },
-    { id: 4, name: "Brazil" },
-    { id: 5, name: "England" }
-  ];
+  options: Array<Object>;
+  subscription: Subscription;
 
-
-  constructor() { }
+  constructor(
+    private contentService: ContentService,
+  ) {
+    this.subscription = this.contentService.showCity().subscribe(options => {
+      if (options) { this.options = options };
+    });
+  }
 }

@@ -18,6 +18,6 @@ export class InputComponent {
   change(value: string) {
     this.value = value;
 
-    this.contentService.getCity(this.value);
+    this.contentService.getCity(this.value).subscribe();
   }
 }
