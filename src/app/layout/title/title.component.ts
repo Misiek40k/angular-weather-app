@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { config } from '../../shared/config';
 
 @Component({
   selector: 'app-title',
@@ -6,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./title.component.scss']
 })
 export class TitleComponent implements OnInit {
-  title = 'Choose your city';
-  subtitle = 'and check the current weather';
+  title = config.title.title;
+  subtitle = config.title.subtitle;
 
   ngOnInit(): void {
   }

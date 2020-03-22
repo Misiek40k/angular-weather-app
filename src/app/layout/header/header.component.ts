@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { config } from '../../shared/config';
 import { faCloud as icon } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-header',
@@ -8,7 +10,7 @@ import { faCloud as icon } from '@fortawesome/free-solid-svg-icons';
 })
 export class HeaderComponent implements OnInit {
   headerIco = icon;
-  headerTxt = 'angular Weather App'
+  headerTxt = config.header.txt
 
   ngOnInit() {
   }
