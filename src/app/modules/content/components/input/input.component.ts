@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { config } from 'app/shared/config'
+import { ContentService } from '../../services/content.service';
 
 @Component({
   selector: 'app-input',
@@ -7,5 +8,22 @@ import { config } from 'app/shared/config'
   styleUrls: ['./input.component.scss']
 })
 export class InputComponent {
-  placeholder: string = config.input.placeholder
+  cities;
+  placeholder: string = config.input.placeholder;
+  value = '';
+
+  constructor(
+    private contentService: ContentService,
+  ) { }
+
+  change(value: string) {
+    this.value = value;
+
+
+    this.contentService.getCity(this.value).subscribe(input=>{
+      this.cities = input
+    });
+
+    console.log(this.cities);
+  }
 }

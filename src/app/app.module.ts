@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { TitleComponent } from './layout/title/title.component';
 import { ContentModule } from './modules/content/content.module';
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,8 @@ import { ContentModule } from './modules/content/content.module';
     BrowserModule,
     FontAwesomeModule,
     ContentModule,
+    HttpClientModule,
+    HttpClientJsonpModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
