@@ -9,14 +9,13 @@ import { Subscription } from 'rxjs';
 })
 export class WeatherComponent {
   subscription: Subscription;
-  weather: Object;
+  weather: any;
 
   constructor(
     private contentService: ContentService,
   ) {
     this.subscription = this.contentService.showWeather().subscribe(weather => {
       this.weather = weather;
-      console.log(this.weather);
     });
   }
 }
