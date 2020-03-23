@@ -16,7 +16,7 @@ export class SelectComponent {
   ) {
     this.subscription = this.contentService.showCity().subscribe(options => {
       this.options = options;
-      this.onChange(options[0].woeid)
+      if (options.length) { this.onChange(options[0].woeid) };
     });
   }
 
