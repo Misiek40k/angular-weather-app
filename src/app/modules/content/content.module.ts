@@ -4,9 +4,15 @@ import { ContentComponent } from './content.component';
 import { InputComponent } from './components/input/input.component';
 import { ContentService } from './services/content.service';
 import { SelectComponent } from './components/select/select.component';
+import { WeatherComponent } from './components/weather/weather.component';
 
 @NgModule({
-  declarations: [ContentComponent, InputComponent, SelectComponent,],
+  declarations: [
+    ContentComponent,
+    InputComponent,
+    SelectComponent,
+    WeatherComponent,
+  ],
   imports: [
     CommonModule,
   ],

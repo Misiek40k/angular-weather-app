@@ -10,20 +10,16 @@ import { Subscription } from 'rxjs';
 export class SelectComponent {
   options: Array<Object> = [];
   subscription: Subscription;
-  data;
 
   constructor(
     private contentService: ContentService,
   ) {
     this.subscription = this.contentService.showCity().subscribe(options => {
-      if (options) { this.options = options };
+      this.options = options;
     });
   }
 
-  onChange(id){
-    this.contentService.getWeather(id).subscribe(city=>{
-      this.data = city
-      console.log(city);
-    })
+  onChange(id) {
+    this.contentService.getWeather(id).subscribe();
   }
 }
