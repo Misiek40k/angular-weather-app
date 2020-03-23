@@ -1,7 +1,6 @@
 @import 'styles/settings.scss';
 
 .item{
-  width: 33%;
   display: block;
   margin-top: $base-unit * 1.2;
   border: 1px solid lighten($color-dark, 70%);
