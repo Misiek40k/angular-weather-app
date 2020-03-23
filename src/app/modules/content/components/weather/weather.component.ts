@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { config } from 'app/shared/config'
 import { ContentService } from '../../services/content.service';
 import { Subscription } from 'rxjs';
 
@@ -9,7 +10,8 @@ import { Subscription } from 'rxjs';
 })
 export class WeatherComponent {
   subscription: Subscription;
-  weather: any;
+  data  = config.weather;
+  weather;
 
   constructor(
     private contentService: ContentService,

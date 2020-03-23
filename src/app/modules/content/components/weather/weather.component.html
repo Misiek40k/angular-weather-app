@@ -1,9 +1,9 @@
 <ng-container *ngIf="weather; then weatherContent else noContent"></ng-container>
 
-<ng-template #noContent ><h3>No city chosen</h3></ng-template>
+<ng-template #noContent ><h3>{{data.noContent}}</h3></ng-template>
 
 <ng-template #weatherContent >
   <div>
-    <h3>Weather in {{weather.title}}</h3>
+    <h3>{{data.title}}{{weather.title}}</h3>
   </div>
 </ng-template>

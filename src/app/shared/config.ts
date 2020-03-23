@@ -14,5 +14,9 @@ export const config = Object({
   },
   input: {
     placeholder: 'City name...',
+  },
+  weather: {
+    noContent: 'No city chosen',
+    title: 'Weather in ',
   }
 })
