@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { config } from 'app/shared/config'
 
 @Component({
   selector: 'app-weather-item',
@@ -7,4 +8,5 @@ import { Component, Input } from '@angular/core';
 })
 export class WeatherItemComponent {
   @Input() weather;
+  data = config.weather.item
 }

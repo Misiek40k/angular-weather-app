@@ -18,5 +18,11 @@ export const config = Object({
   weather: {
     noContent: 'No city chosen',
     title: 'Weather in ',
-  }
+    item: {
+      state: 'weather state: ',
+      temp: 'temp: ',
+      pressure: 'air presure: ',
+      predict: 'predictability: ',
+    },
+  },
 })
