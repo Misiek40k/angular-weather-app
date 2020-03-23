@@ -39,4 +39,5 @@ $br-desktop: 1200px;
   margin: 0 0 $base-unit * 0.6 0;
   font-family: $font-text;
   border-radius: $radius;
+  -webkit-appearance:none;
 }
