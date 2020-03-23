@@ -20,7 +20,6 @@ export class WeatherComponent {
     this.subscription = this.contentService.showWeather().subscribe(weather => {
       this.currentCity = weather;
       this.weathers = weather.consolidated_weather;
-      console.log(this.weathers);
     });
   }
 }
