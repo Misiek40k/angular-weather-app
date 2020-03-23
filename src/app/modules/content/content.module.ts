@@ -5,6 +5,7 @@ import { InputComponent } from './components/input/input.component';
 import { ContentService } from './services/content.service';
 import { SelectComponent } from './components/select/select.component';
 import { WeatherComponent } from './components/weather/weather.component';
+import { WeatherItemComponent } from './components/weather-item/weather-item.component';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { WeatherComponent } from './components/weather/weather.component';
     InputComponent,
     SelectComponent,
     WeatherComponent,
+    WeatherItemComponent,
   ],
   imports: [
     CommonModule,

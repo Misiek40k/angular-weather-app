@@ -10,14 +10,17 @@ import { Subscription } from 'rxjs';
 })
 export class WeatherComponent {
   subscription: Subscription;
-  data  = config.weather;
-  weather;
+  data: Object  = config.weather;
+  currentCity;
+  weathers;
 
   constructor(
     private contentService: ContentService,
   ) {
     this.subscription = this.contentService.showWeather().subscribe(weather => {
-      this.weather = weather;
+      this.currentCity = weather;
+      this.weathers = weather.consolidated_weather;
+      console.log(this.weathers);
     });
   }
 }

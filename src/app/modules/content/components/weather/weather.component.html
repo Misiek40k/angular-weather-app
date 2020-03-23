@@ -1,9 +1,12 @@
-<ng-container *ngIf="weather; then weatherContent else noContent"></ng-container>
+<ng-container *ngIf="currentCity; then weatherContent else noContent"></ng-container>
 
-<ng-template #noContent ><h3>{{data.noContent}}</h3></ng-template>
+<ng-template #noContent>
+  <h3>{{data.noContent}}</h3>
+</ng-template>
 
-<ng-template #weatherContent >
+<ng-template #weatherContent>
+  <h3>{{data.title}}{{currentCity.title}}</h3>
   <div>
-    <h3>{{data.title}}{{weather.title}}</h3>
+    <app-weather-item *ngFor="let weather of weathers" [weather]="weather"></app-weather-item>
   </div>
 </ng-template>
