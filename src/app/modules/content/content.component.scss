@@ -1,7 +1,9 @@
-@import 'styles/settings.scss';
+@import "styles/settings.scss";
 
-.content{
-  .container{
+.content {
+  margin-bottom: $base-unit * 4;
+
+  .container {
     @extend%container;
   }
 }
