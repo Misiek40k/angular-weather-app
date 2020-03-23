@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs';
 })
 export class WeatherComponent {
   subscription: Subscription;
-  data: Object  = config.weather;
+  data = config.weather;
   currentCity;
   weathers;
 

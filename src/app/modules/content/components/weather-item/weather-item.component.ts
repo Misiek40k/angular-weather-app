@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./weather-item.component.scss']
 })
 export class WeatherItemComponent {
-  @Input() weather : Object;
+  @Input() weather;
 }
