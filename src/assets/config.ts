@@ -1,6 +1,6 @@
 export const config = Object({
   corsBypass: 'https://cors-anywhere.herokuapp.com/',
-  api:{
+  api: {
     search: 'https://www.metaweather.com/api/location/search/?query=',
     searchId: 'https://www.metaweather.com/api/location/',
   },
@@ -25,4 +25,4 @@ export const config = Object({
       predict: 'predictability: ',
     },
   },
-})
+});

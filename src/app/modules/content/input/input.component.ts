@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { config } from 'app/shared/config'
-import { ContentService } from '../../services/content.service';
+import { config } from 'assets/config'
+import { ContentService } from '../../../services/content.service';
 
 @Component({
   selector: 'app-input',

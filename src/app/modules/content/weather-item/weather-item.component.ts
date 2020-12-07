@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { config } from 'app/shared/config'
+import { config } from 'assets/config'
 
 @Component({
   selector: 'app-weather-item',

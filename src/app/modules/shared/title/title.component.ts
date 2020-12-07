@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { config } from '../../shared/config';
+import { config } from '../../../../assets/config';
 
 @Component({
   selector: 'app-title',

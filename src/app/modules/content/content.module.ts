@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ContentComponent } from './content.component';
-import { InputComponent } from './components/input/input.component';
-import { ContentService } from './services/content.service';
-import { SelectComponent } from './components/select/select.component';
-import { WeatherComponent } from './components/weather/weather.component';
-import { WeatherItemComponent } from './components/weather-item/weather-item.component';
+import { InputComponent } from './input/input.component';
+import { SelectComponent } from './select/select.component';
+import { WeatherComponent } from './weather/weather.component';
+import { WeatherItemComponent } from './weather-item/weather-item.component';
+import { ContentComponent } from './content/content.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -17,10 +17,10 @@ import { WeatherItemComponent } from './components/weather-item/weather-item.com
   ],
   imports: [
     CommonModule,
+    SharedModule
   ],
   exports: [
-    ContentComponent,
-  ],
-  providers: [ContentService]
+    ContentComponent
+  ]
 })
-export class ContentModule { }
+export class ContentModule {}
