@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ContentService } from '../../../services/content.service';
-import { Subscription } from 'rxjs';
+import { City } from '../../../models/city';
 
 @Component({
   selector: 'app-select',
@@ -8,19 +8,20 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./select.component.scss']
 })
 export class SelectComponent {
-  options: Array<Object> = [{}];
-  subscription: Subscription;
+
+  get curentCitiesList(): City[] {
+    if (this.contentService.citiesList) {
+      return this.contentService.citiesList;
+    } else {
+      return null;
+    }
+  }
 
   constructor(
     private contentService: ContentService,
-  ) {
-    this.subscription = this.contentService.showCity().subscribe(options => {
-      this.options = options;
-      if (options.length) { this.onChange(options[0].woeid) };
-    });
-  }
+  ) {}
 
-  onChange(id) {
-    this.contentService.getWeather(id).subscribe();
+  onCitySelectChange(city: City): void {
+    this.contentService.getWeatherList(city);
   }
 }

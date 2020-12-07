@@ -7,6 +7,6 @@
 <ng-template #weatherContent>
   <h3>{{data.title}}{{currentCity.title}}</h3>
   <div>
-    <app-weather-item *ngFor="let weather of weathers" [weather]="weather"></app-weather-item>
+    <app-weather-item *ngFor="let weather of currentWeathersList" [weather]="weather"></app-weather-item>
   </div>
 </ng-template>

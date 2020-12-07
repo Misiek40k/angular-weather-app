@@ -1,36 +1,36 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, Subject } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { config } from 'assets/config';
+import { City } from '../models/city';
+import { Weather } from '../models/weather';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContentService {
 
-  constructor(private http: HttpClient) { }
+  currentCity: City;
+  citiesList: City[];
+  weatherList: Weather[];
 
-  private citySubject = new Subject<any>();
-  private weatherSubject = new Subject<any>();
+  constructor(
+    private http: HttpClient
+  ) {}
 
-  getCity(city): Observable<any> {
-    return this.http.get(`${config.corsBypass}${config.api.search}${city}`).pipe(
-      map(res => this.citySubject.next(res))
-    );
+  getCitiesList(input: string): void {
+    this.http.get<Array<City>>(environment.corsBypass + environment.search + input)
+      .subscribe(citiesList => {
+        this.citiesList = citiesList;
+      });
   }
 
-  showCity(): Observable<any> {
-    return this.citySubject.asObservable();
-  }
+  getWeatherList(city: City): void {
+    this.currentCity = city;
 
-  getWeather(cityId): Observable<any> {
-    return this.http.get(`${config.corsBypass}${config.api.searchId}${cityId}`).pipe(
-      map(res => this.weatherSubject.next(res))
-    );
-  }
-
-  showWeather(): Observable<any> {
-    return this.weatherSubject.asObservable();
+    this.http.get<Array<Weather>>(environment.corsBypass + environment.searchId + city.woeid)
+      .subscribe(weatherList => {
+          this.weatherList = weatherList;
+        }
+      );
   }
 }

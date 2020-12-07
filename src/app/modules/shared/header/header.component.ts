@@ -8,5 +8,5 @@ import { config } from '../../../../assets/config';
 })
 export class HeaderComponent {
   headerIco: string = config.header.ico;
-  headerTxt: string = config.header.txt
+  headerTxt: string = config.header.txt;
 }

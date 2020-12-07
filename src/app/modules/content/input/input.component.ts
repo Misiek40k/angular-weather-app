@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { config } from 'assets/config'
+import { config } from 'assets/config';
 import { ContentService } from '../../../services/content.service';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-input',
@@ -8,16 +9,16 @@ import { ContentService } from '../../../services/content.service';
   styleUrls: ['./input.component.scss']
 })
 export class InputComponent {
+
   placeholder: string = config.input.placeholder;
-  value = '';
+
+  inputControl = new FormControl('');
 
   constructor(
     private contentService: ContentService,
   ) { }
 
-  change(value: string) {
-    this.value = value;
-
-    this.contentService.getCity(this.value).subscribe();
+  change() {
+    this.contentService.getCitiesList(this.inputControl.value);
   }
 }

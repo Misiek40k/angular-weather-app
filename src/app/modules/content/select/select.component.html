@@ -1,3 +1,5 @@
-<select class="select" #select (change)="onChange(select.value)">
-  <option *ngFor="let option of options" [value]="option.woeid">{{option.title}}</option>
+<select class="select" #select [ngModel]="curentCitiesList" (ngModelChange)="onCitySelectChange($event)">
+  <option *ngFor="let city of curentCitiesList" [ngValue]="city">
+    {{city.title}}
+  </option>
 </select>

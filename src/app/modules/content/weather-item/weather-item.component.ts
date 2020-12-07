@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { config } from 'assets/config'
+import { config } from 'assets/config';
+import { Weather } from '../../../models/weather';
 
 @Component({
   selector: 'app-weather-item',
@@ -7,6 +8,8 @@ import { config } from 'assets/config'
   styleUrls: ['./weather-item.component.scss']
 })
 export class WeatherItemComponent {
-  @Input() weather;
-  data = config.weather.item
+
+  @Input() weather: Weather;
+
+  data = config.weather.item;
 }
